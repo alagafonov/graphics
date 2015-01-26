@@ -26,7 +26,7 @@ class ScreenBuffer
 {
 private:
 	int width, height;
-	byte *screen;
+	byte *screen, *fBuffer;
 	ComPtr<ID2D1Bitmap1> sceneBitmap;
 public:
 	ScreenBuffer(int width, int height, ID2D1DeviceContext *d2d1DeviceContext, float dpix, float dpiy);

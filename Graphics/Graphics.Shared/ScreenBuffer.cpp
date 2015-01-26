@@ -22,6 +22,10 @@ ScreenBuffer::ScreenBuffer(int width, int height, ID2D1DeviceContext *d2d1Device
 	// Create byte array for our pixel buffer.
 	screen = new byte[width * height * PIXEL_SIZE];
 
+	// Create effect buffer.
+	fBuffer = new byte[width * height * PIXEL_SIZE];
+	memset(fBuffer, 0, width * height * PIXEL_SIZE);
+
 	// Clear newly created screen buffer.
 	Clear();
 }
@@ -67,9 +71,6 @@ ID2D1Bitmap1 *ScreenBuffer::GetBitmap()
 
 void ScreenBuffer::FireEffect()
 {
-	byte *fBuffer = new byte[width * height * PIXEL_SIZE], *tmp;
-	memset(fBuffer, 0, width * height * PIXEL_SIZE);
-
 	RGBAColour c1, c2, c3, c4;
 	int index;
 	for (int y = 1; y < height - 2; y++)
@@ -92,9 +93,5 @@ void ScreenBuffer::FireEffect()
 		}
 	}
 
-	tmp = screen;
-	screen = fBuffer;
-	delete[] tmp;
-	tmp = NULL;
-	fBuffer = NULL;
+	memcpy(screen, fBuffer, width * height * PIXEL_SIZE);
 }
