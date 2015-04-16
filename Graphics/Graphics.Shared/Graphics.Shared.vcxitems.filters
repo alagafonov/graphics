@@ -7,13 +7,17 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)DirectXHelper.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)ScreenBuffer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Particle.h">
+      <Filter>ParticleSystem</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)app.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GraphicsMain.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)ScreenBuffer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Particle.cpp">
+      <Filter>ParticleSystem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Common">
@@ -21,6 +25,9 @@
     </Filter>
     <Filter Include="Content">
       <UniqueIdentifier>{0d400e9f-af9e-4cf1-b97e-777dfa1b7228}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ParticleSystem">
+      <UniqueIdentifier>{04f53415-6987-40bf-8fc7-999bb9e02c4e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

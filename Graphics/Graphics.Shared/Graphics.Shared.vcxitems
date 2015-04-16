@@ -14,17 +14,17 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)ScreenBuffer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Particle.cpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)app.h" />
     <ClCompile Include="$(MSBuildThisFileDirectory)app.cpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DirectXHelper.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GraphicsMain.h" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GraphicsMain.cpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Particle.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pch.h" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClInclude Include="$(MSBuildThisFileDirectory)ScreenBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectCapability Include="SourceItemsFromImports" />

@@ -1,11 +1,6 @@
 ﻿#pragma once
 
 #include "DirectXHelper.h"
-#include "ScreenBuffer.h"
-
-/*#define VIRTUAL_WIDTH 320
-#define VIRTUAL_HEIGHT 200
-#define SCALE 1*/
 
 #define VIRTUAL_WIDTH 1366
 #define VIRTUAL_HEIGHT 768
@@ -48,9 +43,6 @@ namespace Graphics
 
 		// Screen DPI properties.
 		float dpiX, dpiY;
-
-		// Screen buffer object.
-		ScreenBuffer *screenBuffer;
 	
 	public:
 		void Initialize();

@@ -163,10 +163,6 @@ void GraphicsMain::Initialize()
 
 	// Now we can set the Direct2D render target.
 	m_d2dContext->SetTarget(m_d2dTargetBitmap.Get());
-
-	// Create screen map of certain size.
-	//screenBuffer = new ScreenBuffer(VIRTUAL_WIDTH, VIRTUAL_HEIGHT, m_d2dContext.Get(), dpiX, dpiY);
-	screenBuffer = new ScreenBuffer(320, 200, m_d2dContext.Get(), dpiX, dpiY);
 }
 
 // this function performs updates to the state of the game
@@ -177,30 +173,11 @@ void GraphicsMain::Update()
 // this function renders a single frame of 3D graphics
 void GraphicsMain::Render()
 {
-	for (int x = 1; x < 6; x++)
-	{
-		screenBuffer->SetPixel(10 + x, (rand() % 3) + (200 - 4), RGBAColour(rand() % 256, 250, 0, 0));
-		screenBuffer->SetPixel(30 + x, (rand() % 3) + (200 - 4), RGBAColour(rand() % 256, 0, 0, 0));
-		screenBuffer->SetPixel(50 + x, (rand() % 3) + (200 - 4), RGBAColour(0, rand() % 256, 250, 0));
-		screenBuffer->SetPixel(70 + x, (rand() % 3) + (200 - 4), RGBAColour(rand() % 256, 0, 250, 0));
-	}
-
-	for (int x = 160; x < 320; x++)
-	{
-		screenBuffer->SetPixel(x, (rand() % 2) + (200 - 4), RGBAColour(rand() % 256, rand() % 40, 0, 0));
-	}
-
-	screenBuffer->FireEffect();
-
 	// Start drawing.
 	m_d2dContext->BeginDraw();
 
 	// Clear screen.
 	m_d2dContext->Clear(ColorF(0.0f, 0.0f, 0.0f));
-
-	// Draw scene bitmap.
-	//m_d2dContext->DrawBitmap(screenBuffer->GetBitmap(), (SCALE ? &RectF(0, 0, m_window->Bounds.Width, m_window->Bounds.Height) : &RectF(0, 0, VIRTUAL_WIDTH, VIRTUAL_HEIGHT)));
-	m_d2dContext->DrawBitmap(screenBuffer->GetBitmap(), (SCALE ? &RectF(0, 0, m_window->Bounds.Width, m_window->Bounds.Height) : &RectF((VIRTUAL_WIDTH / 2) - 160, VIRTUAL_HEIGHT - 200, (VIRTUAL_WIDTH / 2) + 160, VIRTUAL_HEIGHT)));
 
 	// End drawing.
 	DX::ThrowIfFailed(
