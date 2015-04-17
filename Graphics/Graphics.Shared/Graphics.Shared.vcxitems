@@ -14,9 +14,13 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)BitmapContainer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Direct2DUtility.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Particle.cpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)app.h" />
     <ClCompile Include="$(MSBuildThisFileDirectory)app.cpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)BitmapContainer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Direct2DUtility.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)DirectXHelper.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GraphicsMain.h" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GraphicsMain.cpp" />

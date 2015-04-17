@@ -20,7 +20,7 @@ void Particle::Update()
 
 void Particle::Draw()
 {
-	ComPtr<ID2D1SolidColorBrush> pBlackBrush;
+	/*ComPtr<ID2D1SolidColorBrush> pBlackBrush;
 	m_d2dContext->CreateSolidColorBrush(
 		D2D1::ColorF(D2D1::ColorF::Aqua),
 		&pBlackBrush
@@ -32,5 +32,5 @@ void Particle::Draw()
 		rc.top + 100.0f,
 		rc.right - 100.0f,
 		rc.bottom - 100.0f),
-		pBlackBrush);
+		pBlackBrush);*/
 }

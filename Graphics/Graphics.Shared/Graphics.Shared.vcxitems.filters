@@ -10,6 +10,10 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Particle.h">
       <Filter>ParticleSystem</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)BitmapContainer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Direct2DUtility.h">
+      <Filter>Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)app.cpp" />
@@ -17,6 +21,10 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pch.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Particle.cpp">
       <Filter>ParticleSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)BitmapContainer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Direct2DUtility.cpp">
+      <Filter>Common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
