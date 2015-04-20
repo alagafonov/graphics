@@ -1,35 +1,23 @@
-//===================================================================================
-// Copyright (c) Microsoft Corporation.  All rights reserved.                        
-//                                                                                   
-// THIS CODE AND INFORMATION IS PROVIDED 'AS IS' WITHOUT WARRANTY                    
-// OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT                       
-// LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND                          
-// FITNESS FOR A PARTICULAR PURPOSE.                                                 
-//===================================================================================
-
 #include "pch.h"
 #include "Direct2DUtility.h"
 
-using namespace Hilo::Direct2DHelpers;
+using namespace DX;
 
-Direct2DUtility::Direct2DUtility()
+Direct2DHelper::Direct2DHelper()
 {
 }
 
-Direct2DUtility::~Direct2DUtility()
+Direct2DHelper::~Direct2DHelper()
 {
 }
 
-//
-// Creates a Direct2D bitmap from the specified
-// file name.
-//
-HRESULT Direct2DUtility::LoadBitmapFromFile(
-    ID2D1RenderTarget *renderTarget,
+// Creates a Direct2D bitmap from the specified file name.
+HRESULT Direct2DHelper::LoadBitmapFromFile(
+	ID2D1DeviceContext *renderTarget,
     const wchar_t *uri,
     unsigned int destinationWidth, 
     unsigned int destinationHeight,
-    ID2D1Bitmap ** bitmap)
+    ID2D1Bitmap1 **bitmap)
 {
     HRESULT hr = S_OK;
 
@@ -133,7 +121,7 @@ HRESULT Direct2DUtility::LoadBitmapFromFile(
 //
 // Get a WIC Imaging factory
 //
-HRESULT Direct2DUtility::GetWICFactory(IWICImagingFactory** factory)
+HRESULT Direct2DHelper::GetWICFactory(IWICImagingFactory** factory)
 {
     static ComPtr<IWICImagingFactory> m_pWICFactory;
     HRESULT hr = S_OK;
@@ -149,7 +137,7 @@ HRESULT Direct2DUtility::GetWICFactory(IWICImagingFactory** factory)
 
     if (SUCCEEDED(hr))
     {
-        hr = AssignToOutputPointer(factory, m_pWICFactory);
+		*factory = m_pWICFactory.Get();
     }
 
     return hr;

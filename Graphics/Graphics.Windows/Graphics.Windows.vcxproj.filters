@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Common">
@@ -8,7 +8,7 @@
       <UniqueIdentifier>563e75c7-8b38-4680-afbc-3ab41e7da379</UniqueIdentifier>
       <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
     </Filter>
-	<Filter Include="Content">
+    <Filter Include="Content">
       <UniqueIdentifier>c72a677c-05a2-40ea-82b7-bddb41bb2360</UniqueIdentifier>
     </Filter>
     <Image Include="Assets\Logo.png">
@@ -21,6 +21,17 @@
       <Filter>Assets</Filter>
     </Image>
     <Image Include="Assets\SplashScreen.png">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Graphics.Windows_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\heRQP.png">
       <Filter>Assets</Filter>
     </Image>
   </ItemGroup>

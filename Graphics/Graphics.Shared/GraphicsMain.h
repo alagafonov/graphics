@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include "DirectXHelper.h"
+#include "Direct2DUtility.h"
 
 #define VIRTUAL_WIDTH 1366
 #define VIRTUAL_HEIGHT 768
@@ -43,6 +44,14 @@ namespace Graphics
 
 		// Screen DPI properties.
 		float dpiX, dpiY;
+
+
+
+
+		ComPtr<ID2D1Bitmap1> __testBmp;
+
+
+
 	
 	public:
 		void Initialize();

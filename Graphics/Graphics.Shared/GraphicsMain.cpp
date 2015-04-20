@@ -163,6 +163,22 @@ void GraphicsMain::Initialize()
 
 	// Now we can set the Direct2D render target.
 	m_d2dContext->SetTarget(m_d2dTargetBitmap.Get());
+
+
+	std::wstring wpath = Windows::ApplicationModel::Package::Current->InstalledLocation->Path->Data();
+	wpath += L"\\Assets\\heRQP.png";
+
+
+
+	DX::Direct2DHelpers::Direct2DUtility::LoadBitmapFromFile(m_d2dContext.Get(), wpath.c_str(), 438, 316, &__testBmp);
+
+
+
+
+	
+
+
+
 }
 
 // this function performs updates to the state of the game
@@ -178,6 +194,8 @@ void GraphicsMain::Render()
 
 	// Clear screen.
 	m_d2dContext->Clear(ColorF(0.0f, 0.0f, 0.0f));
+
+	m_d2dContext->DrawBitmap(__testBmp.Get(), D2D1::RectF(0, 0, 438, 316));
 
 	// End drawing.
 	DX::ThrowIfFailed(

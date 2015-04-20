@@ -16,36 +16,20 @@ using namespace Windows::UI::Core;
 using namespace Platform;
 using namespace DirectX;
 
-namespace Hilo
+namespace DX
 {
-    namespace Direct2DHelpers
+    //
+    // This class provides various utility functions to work with 
+    // Direct2D and related APIs such as WIC and DirectWrite
+    //
+	class Direct2DHelper
     {
-        //
-        // This class provides various utility functions to work with 
-        // Direct2D and related APIs such as WIC and DirectWrite
-        //
-        class Direct2DUtility
-        {
-        public:
-            static HRESULT LoadBitmapFromFile(ID2D1RenderTarget *renderTarget, const wchar_t *uri, unsigned int destinationWidth, unsigned int destinationHeight, ID2D1Bitmap **bitmap);
-            static HRESULT GetWICFactory(__out IWICImagingFactory** factory);
-			
-			template<class T>
-			inline static HRESULT AssignToOutputPointer(T** pp, const ComPtr<T> &p)
-			{
-				assert(pp);
-				*pp = p;
-				if (nullptr != (*pp))
-				{
-					(*pp)->AddRef();
-				}
+    public:
+		static HRESULT LoadBitmapFromFile(ID2D1DeviceContext *renderTarget, const wchar_t *uri, unsigned int destinationWidth, unsigned int destinationHeight, ID2D1Bitmap1 **bitmap);
+        static HRESULT GetWICFactory(__out IWICImagingFactory** factory);
 
-				return S_OK;
-			}
-
-        private:
-            Direct2DUtility();
-            ~Direct2DUtility();
-        };
-    }
+    private:
+		Direct2DHelper();
+		~Direct2DHelper();
+    };
 }
